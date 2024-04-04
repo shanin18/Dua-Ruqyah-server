@@ -24,7 +24,11 @@ const server = http.createServer((req, res) => {
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
   // Routing
-  if (pathname === "/categories" && req.method === "GET") {
+  if (pathname === "/" && req.method === "GET") {
+    // Handle request for root
+    res.writeHead(200, { "Content-Type": "text/plain" });
+    res.end("Welcome to the Dua API");
+  } else if (pathname === "/categories" && req.method === "GET") {
     // Handle request for categories
     getCategories(req, res);
   } else if (pathname === "/sub-categories" && req.method === "GET") {
