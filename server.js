@@ -7,6 +7,12 @@ const { getDuasByCategoryAndSubcategory } = require("./routes/duasByCategoryAndS
 const { getAllDua } = require("./routes/allDua");
 const { getSubCategories } = require("./routes/subCategories");
 
+// Function to handle 404 Not Found errors
+function handleNotFound(req, res) {
+  res.writeHead(404, { "Content-Type": "text/plain" });
+  res.end("Not Found");
+}
+
 // Create HTTP server
 const server = http.createServer((req, res) => {
   // Parsing request URL
@@ -21,7 +27,6 @@ const server = http.createServer((req, res) => {
   if (pathname === "/categories" && req.method === "GET") {
     // Handle request for categories
     getCategories(req, res);
-
   } else if (pathname === "/sub-categories" && req.method === "GET") {
     // Handle request for sub-categories
     const { cat_id } = query;
@@ -30,7 +35,6 @@ const server = http.createServer((req, res) => {
     } else {
       getSubCategories(req, res);
     }
-
   } else if (pathname === "/duas" && req.method === "GET") {
     // Handle request for duas
     const { cat, subcat_id } = query;
@@ -39,11 +43,9 @@ const server = http.createServer((req, res) => {
     } else {
       getAllDua(req, res);
     }
-    
   } else {
     // Handle 404 Not Found
-    res.writeHead(404, { "Content-Type": "text/plain" });
-    res.end("Not Found");
+    handleNotFound(req, res);
   }
 });
 
