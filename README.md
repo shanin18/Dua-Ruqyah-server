@@ -52,11 +52,11 @@ Welcome to dua and ruqyah server, curated by the IRD Foundation. backed by advan
 ### Endpoints => <a name="endpoints"></a>
 
 
-- **All Dua api**
-- **All Dua by category and subCategory Id api**
-- **Categories api**
-- **Subcategories api**
-- **SubCategories by id api**
+- **https://concerned-crow-fedora.cyclic.app/duas**
+- **https://concerned-crow-fedora.cyclic.app/categories**
+- **https://concerned-crow-fedora.cyclic.app/sub-categories**
+- **https://concerned-crow-fedora.cyclic.app/categories?cat_id={id}**
+- **https://concerned-crow-fedora.cyclic.app/duas?cat=${id}&subcat_id=${id}**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
