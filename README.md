@@ -2,7 +2,7 @@
 
 <!-- TABLE OF CONTENTS -->
 
-# 📗 Table of Contents <a name="about-project">Dua & Ruqyah Backend</a>
+# 📗 Table of Contents
 
 - [🤲 Dua & Ruqyah Server ](#-Dua-Ruqyah-Server-)
   - [🛠 Built With ](#-built-with-)
